@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A517B5D5-FAFF-4C60-A347-A5E3E545323E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BankWorxTrackerX</RootNamespace>
+    <AssemblyName>BankWorxTrackerX</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\dev\BankWorxTrackerX\BankWorxTrackerX\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://bankdatastorage.blob.core.windows.net/bankworxtrackerxsetup/</InstallUrl>
+    <UpdateUrl>https://bankdatastorage.blob.core.windows.net/bankworxtrackerxsetup/</UpdateUrl>
+    <ProductName>BankWorkxTrackerX</ProductName>
+    <PublisherName>BankWorx</PublisherName>
+    <SuiteName>BankWorx</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DFD0B764BDF9DB8170FA365718B6D2E06DDBDBCD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>BankWorxTrackerX_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BW_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BankWorxTrackerX.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.ServiceBus.4.1.3\lib\net45\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankUser.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoanPackage.cs" />
+    <Compile Include="Models\Officer.cs" />
+    <Compile Include="Models\Type.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BankWorxTrackerX_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Printer_32X32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Cancel-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Printer-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Refresh-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Save-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Settings-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Printer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Cancel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Denials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Lock_Rred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Processing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\In.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckInGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckOutRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckInGreen-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckOutRed-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckInGreenDisabled-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CheckOutRedDisabled-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Close_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Denials_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Edit_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Lock-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\LockDisabled-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Check-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\SaveDisabled-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BW_Icon.ico" />
+    <None Include="images\Plus-32x32.png" />
+    <None Include="images\UnLock-32x32.png" />
+    <None Include="images\Home.png" />
+    <None Include="images\Excel.png" />
+    <None Include="images\Excel_Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
